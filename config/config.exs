@@ -28,3 +28,4 @@ use Mix.Config
 # here (which is why it is important to import them last).
 #
 #     import_config "#{Mix.env}.exs"
+config :acx, url: "https://acx.io:443/api/v2/", access_key: "xxxx", secret: " yyyy"

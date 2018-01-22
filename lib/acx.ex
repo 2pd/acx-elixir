@@ -107,7 +107,7 @@ defmodule Acx do
     IO.puts body
     @endpoint <> uri
       # |> HTTPoison.post({:form, body}, %{"Content-Type"=> "application/x-www-form-urlencoded"}, hackney: [:insecure])
-      |> HTTPoison.post!(body, [{"Content-Type", "application/x-www-form-urlencoded"}], hackney: [:insecure])
+      |> HTTPoison.post!(body, [{"Content-Type", "application/x-www-form-urlencoded"}], [ ssl: [{:versions, [:'tlsv1.2']}]])
       |> process_response
   end
 
@@ -131,7 +131,7 @@ defmodule Acx do
 
   defp public(uri) do
     @endpoint <> uri
-    |> HTTPoison.get
+    |> HTTPoison.get([], [ ssl: [{:versions, [:'tlsv1.2']}]])
     |> process_response
   end
 

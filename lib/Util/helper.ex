@@ -7,5 +7,14 @@ defmodule Util.Helper do
     |> Enum.join("&")
   end
 
+  def nonce() do
+    :os.system_time(:millisecond)
+  end
+
+  def map_keys_to_string(map) do
+    k = Map.keys(map) |> Enum.map(&(Atom.to_string(&1)))
+    v = Map.values(map)
+    Enum.zip(k,v) |> Enum.into(%{})
+  end
 
 end

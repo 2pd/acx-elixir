@@ -2,8 +2,15 @@ defmodule AcxTest do
   use ExUnit.Case
   doctest Acx
 
-  test "genenrate propose" do
-    IO.inspect Application.get_env(:acx, :url)
+  test "general testing" do
+    # {:ok, %{"email" => email}} = Acx.balance()
+    # IO.puts email
+    # IO.inspect Acx.get_orders()
+     # IO.inspect Acx.buy(10, 1000, "btcaud")
+    # IO.inspect Acx.buy(10, "btcaud")
+    # IO.inspect Acx.clear()
+    # IO.inspect Acx.cancel("192153")
+    # IO.inspect Acx.get_order("192153")
   end
 
   # test "should return all ticker values for default pair" do

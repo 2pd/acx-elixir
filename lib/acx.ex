@@ -104,9 +104,7 @@ defmodule Acx do
 
   defp private(uri, "POST", params) do
     body = params_to_request(params) <> "&signature=" <> signature(uri, "POST", params)
-    IO.puts body
     @endpoint <> uri
-      # |> HTTPoison.post({:form, body}, %{"Content-Type"=> "application/x-www-form-urlencoded"}, hackney: [:insecure])
       |> HTTPoison.post!(body, [{"Content-Type", "application/x-www-form-urlencoded"}], [ ssl: [{:versions, [:'tlsv1.2']}]])
       |> process_response
   end

@@ -62,12 +62,20 @@ defmodule Acx do
     private("orders.json", "GET", Map.put(params, "market", market))
   end
 
-  def buy(volume, market) do
+  def buy(market, volume) do
     post_order(market, %Acx.Order{volume: volume, side: "buy"})
   end
 
-  def buy(volume, price, market) do
+  def buy(market, volume, price) do
     post_order(market, %Acx.Order{volume: volume, price: price, side: "buy"})
+  end
+
+  def sell(market, volume) do
+    post_order(market, %Acx.Order{volume: volume, side: "sell"})
+  end
+
+  def sell(market, volume, price) do
+    post_order(market, %Acx.Order{volume: volume, price: price, side: "sell"})
   end
 
   def post_order(market, params \\ %Acx.Order{}) do

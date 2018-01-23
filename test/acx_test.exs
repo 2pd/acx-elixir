@@ -39,5 +39,14 @@ defmodule AcxTest do
     assert length(depth["bids"]) == 5
   end
 
+  test "should sell one order in market btcaud" do
+    {:ok, result} = Acx.sell("btcaud", 10, 10000)
+    IO.inspect result
+  end
+
+  test "should buy one order in market btcaud" do
+    {:ok, result} = Acx.buy("btcaud", 20, 1000)
+    IO.inspect result
+  end
 
 end

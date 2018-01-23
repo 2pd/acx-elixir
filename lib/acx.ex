@@ -63,7 +63,7 @@ defmodule Acx do
   end
 
   def buy(market, volume) do
-    post_order(market, %Acx.Order{volume: volume, side: "buy"})
+    post_order(market, %Acx.Order{volume: volume, side: "buy", ord_type: "market"})
   end
 
   def buy(market, volume, price) do
@@ -71,7 +71,7 @@ defmodule Acx do
   end
 
   def sell(market, volume) do
-    post_order(market, %Acx.Order{volume: volume, side: "sell"})
+    post_order(market, %Acx.Order{volume: volume, side: "sell", ord_type: "market"})
   end
 
   def sell(market, volume, price) do

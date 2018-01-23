@@ -3,7 +3,7 @@ defmodule AcxTest do
   doctest Acx
 
   test "general testing" do
-    {:ok, %{"email" => email}} = Acx.balance()
+    # {:ok, %{"email" => email}} = Acx.balance()
     # IO.puts email
     # IO.inspect Acx.get_orders()
     # IO.inspect Acx.buy(10, 1000, "btcaud")
@@ -44,8 +44,8 @@ defmodule AcxTest do
     IO.inspect result
   end
 
-  test "should buy one order in market btcaud" do
-    {:ok, result} = Acx.buy("btcaud", 20, 1000)
+  test "should buy one order in market price" do
+    {:ok, result} = Acx.buy("btcaud", 20)
     IO.inspect result
   end
 

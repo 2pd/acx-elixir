@@ -3,6 +3,7 @@ defmodule Acx.Order do
   defstruct [
     :side,
     :volume,
-    :price
+    :price,
+    :ord_type
   ]
 end

@@ -1,5 +1,6 @@
 defmodule Acx do
-  @endpoint Application.get_env(:acx, :url)
+
+  @endpoint Application.get_env(:acx, :url, "https://acx.io/api/v2/")
 
   def depth(market \\ "btcaud", limit \\ 300) do
     public("depth.json?market=#{market}&limit=#{limit}")

@@ -10,7 +10,7 @@ by adding `acx_elixir` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:acx, "~> 0.0.1"}
+    {:acx, "~> 0.0.2"}
   ]
 end
 ```
